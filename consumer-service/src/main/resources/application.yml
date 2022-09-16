@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+#spring:
+#  application:
+#    name: consumer-service
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+
+## Nacos registry address
+dubbo:
+  application:
+    name: consumer-service
+  registry:
+    address: nacos://127.0.0.1:8848
