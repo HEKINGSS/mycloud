@@ -30,7 +30,11 @@
         <dubbo.version>3.1.0</dubbo.version>
         <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
         <log4j.version>2.18.0</log4j.version>
-        <spring-boot.version>2.6.3</spring-boot.version>
+        <spring-boot.version>2.6.6</spring-boot.version>
+        <spring-context-support.version>1.0.11</spring-context-support.version>
+        <jedis.version>4.2.3</jedis.version>
+        <swagger.version>3.0.0</swagger.version>
+        <common-pool2.version>2.11.1</common-pool2.version>
     </properties>
 
     <dependencyManagement>
@@ -46,7 +50,37 @@
                 <scope>test</scope>
             </dependency>
 
-<!--            <dependency>-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${common-pool2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--            <dependency>-->
 <!--                <groupId>org.springframework.cloud</groupId>-->
 <!--                <artifactId>spring-cloud-dependencies</artifactId>-->
 <!--                <version>2021.0.1</version>-->
@@ -75,15 +109,12 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
 
-
-            <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-registry-nacos -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-registry-nacos</artifactId>
@@ -96,11 +127,10 @@
                 <version>${dubbo.version}</version>
             </dependency>
 
-            <!-- Alibaba Spring Context extension -->
             <dependency>
                 <groupId>com.alibaba.spring</groupId>
                 <artifactId>spring-context-support</artifactId>
-                <version>1.0.11</version>
+                <version>${spring-context-support.version}</version>
             </dependency>
 
             <dependency>
@@ -108,20 +138,21 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-log4j12.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>${slf4j-log4j12.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
+
 
     <build>
         <plugins>

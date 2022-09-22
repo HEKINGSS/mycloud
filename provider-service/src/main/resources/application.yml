@@ -1,13 +1,22 @@
 server:
   port: 8080
 
-#spring:
+spring:
 #  application:
 #    name: provider-service
 #  cloud:
 #    nacos:
 #      discovery:
 #        server-addr: 127.0.0.1:8848
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
 
 ## Nacos registry address
 dubbo:
