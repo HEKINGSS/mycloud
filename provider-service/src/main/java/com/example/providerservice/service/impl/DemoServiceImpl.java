@@ -1,16 +1,14 @@
-package com.example.providerservice.service.imp;
+package com.example.providerservice.service.impl;
 
 import com.example.commons.api.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
 @Slf4j
 @DubboService
-public class MyDemoService implements DemoService {
-
+public class DemoServiceImpl implements DemoService {
     @Value("${dubbo.application.name}")
     private String serviceName;
 
