@@ -1,4 +1,4 @@
-package com.example.consumerservice.comtroller;
+package com.example.consumerservice.controller;
 
 import com.example.commons.api.DemoService;
 import com.example.commons.entity.User;
