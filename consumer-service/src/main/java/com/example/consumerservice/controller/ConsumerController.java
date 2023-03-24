@@ -15,9 +15,15 @@ public class ConsumerController {
     @DubboReference
     private DemoService demoService;
 
+
+
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable("id") Integer id) {
+
         return new User(id, "Hejin", 27);
+
+
+
     }
 
     @GetMapping("/demo")
