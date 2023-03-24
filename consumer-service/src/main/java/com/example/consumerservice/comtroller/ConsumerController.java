@@ -2,6 +2,7 @@ package com.example.consumerservice.comtroller;
 
 import com.example.commons.api.DemoService;
 import com.example.commons.entity.User;
+
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

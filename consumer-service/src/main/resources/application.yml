@@ -1,14 +1,23 @@
 server:
   port: 8090
-  address: 0.0.0.0
 
-#spring:
+spring:
 #  application:
 #    name: consumer-service
 #  cloud:
 #    nacos:
 #      discovery:
 #        server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 139.155.172.24
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      direct:
+        acknowledge-mode: auto
+      simple:
+        acknowledge-mode: auto
 
 ## Nacos registry address
 dubbo:

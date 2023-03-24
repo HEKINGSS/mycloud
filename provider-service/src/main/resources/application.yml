@@ -2,25 +2,43 @@ server:
   port: 8080
 
 spring:
-#  application:
+  profiles:
+    active: dev
+  #  application:
 #    name: provider-service
 #  cloud:
 #    nacos:
 #      discovery:
 #        server-addr: 127.0.0.1:8848
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    database: 0
-    jedis:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    database: 0
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+#  rabbitmq:
+#    host: 139.155.172.24
+#    port: 5672
+#    username: guest
+#    password: guest
+#    listener:
+#      direct:
+#        acknowledge-mode: auto
+#      simple:
+#        acknowledge-mode: auto
 
 ## Nacos registry address
 dubbo:
   application:
-    name: provider-service
+    name: provider-service-dev
   registry:
     address: nacos://127.0.0.1:8848
+  scan:
+    base-packages: com.example.providerservice.service.impl
+  config-center:
+    address: nacos://127.0.0.1:8848
+    data-id: provider-service-dev.yaml
+    group: DEFAULT_GROUP

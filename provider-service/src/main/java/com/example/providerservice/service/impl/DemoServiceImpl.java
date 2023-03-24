@@ -6,6 +6,9 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+
 @Slf4j
 @DubboService
 public class DemoServiceImpl implements DemoService {
